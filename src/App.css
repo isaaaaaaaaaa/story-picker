@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap');
+
+@import url(https://fonts.googleapis.com/css?family=Borel:regular);
+
 .App {
   text-align: center;
 }
@@ -28,11 +32,11 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4 {
+  font-family: "Unkempt", cursive;
+}
+
+h2 {
+  font-family: "Borel";
+  color: #eee4f0;
 }
