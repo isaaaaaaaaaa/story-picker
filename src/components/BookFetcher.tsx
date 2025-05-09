@@ -52,7 +52,8 @@ const BookFetcher = ({
       <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
         {data?.results.map((item) => (
           <div
-            className="cursor-pointer rounded-xl border-2 border-solid border-indigo-500 shadow-lg m-8"
+            className="cursor-pointer rounded-xl shadow-lg m-8 
+            bg-[rgb(255,255,225)]/50 border-none"
             key={item.title}
             onClick={() => onChangeBook(item)}
           >

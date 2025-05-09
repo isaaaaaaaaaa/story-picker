@@ -12,15 +12,15 @@ function App() {
   const [story, dispatch] = useReducer(storyReducer, initialStory);
 
   const caracters: Array<Category> = [
-    { id: 0, label: "Girl" },
-    { id: 1, label: "Boy" },
-    { id: 2, label: "Princess" },
-    { id: 3, label: "Prince" },
-    { id: 4, label: "Witch" },
-    { id: 5, label: "Cat" },
-    { id: 6, label: "Dog" },
-    { id: 7, label: "Animal" },
-    { id: 8, label: "Pirate" },
+    { id: 0, label: "Girl", icon: "caracters/girl.svg" },
+    { id: 1, label: "Boy", icon: "caracters/boy.svg" },
+    { id: 2, label: "Princess", icon: "caracters/princess.svg" },
+    { id: 3, label: "Prince", icon: "caracters/prince.svg" },
+    { id: 4, label: "Witch", icon: "caracters/witch.svg" },
+    { id: 5, label: "Cat", icon: "caracters/cat.svg" },
+    { id: 6, label: "Dog", icon: "caracters/dog.svg" },
+    { id: 7, label: "Animal", icon: "caracters/animal.svg" },
+    { id: 8, label: "Pirate", icon: "caracters/pirate.svg" },
   ];
 
   function handleChangeCaracter(caracter: string) {
