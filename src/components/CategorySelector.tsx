@@ -1,14 +1,22 @@
-export default function CategorySelector({ data, onChangeCaracter }) {
+import { Category } from "../models/Category";
+
+export default function CategorySelector({
+  categories,
+  onChangeCaracter,
+}: {
+  categories: Array<Category>;
+  onChangeCaracter: any;
+}) {
   return (
     <>
       <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-3">
-        {data.map((item) => (
+        {categories.map((category) => (
           <div
-            key={item}
+            key={category.id}
             className="cursor-pointer rounded-xl border-solid border-2 shadow-lg m-8 border-pink-500 bg-white"
-            onClick={() => onChangeCaracter(item)}
+            onClick={() => onChangeCaracter(category.label)}
           >
-            <h4>{item}</h4>
+            <h4>{category.label}</h4>
           </div>
         ))}
       </div>

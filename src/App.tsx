@@ -6,9 +6,22 @@ import CategorySelector from "./components/CategorySelector";
 import BookFetcher from "./components/BookFetcher";
 import { Book } from "./models/Book";
 import BookDisplay from "./components/BookDisplay";
+import { Category } from "./models/Category";
 
 function App() {
   const [story, dispatch] = useReducer(storyReducer, initialStory);
+
+  const caracters: Array<Category> = [
+    { id: 0, label: "Girl" },
+    { id: 1, label: "Boy" },
+    { id: 2, label: "Princess" },
+    { id: 3, label: "Prince" },
+    { id: 4, label: "Witch" },
+    { id: 5, label: "Cat" },
+    { id: 6, label: "Dog" },
+    { id: 7, label: "Animal" },
+    { id: 8, label: "Pirate" },
+  ];
 
   function handleChangeCaracter(caracter: string) {
     dispatch({
@@ -29,22 +42,11 @@ function App() {
       <h2 className="text-3xl font-bold p-8 text-shadow-lg/20">
         Story picker for picky bedtime readers
       </h2>
-      {/* <GuntendexApiDataFetcher /> */}
 
       {story?.selectedCaracter === undefined && (
         <CategorySelector
           onChangeCaracter={handleChangeCaracter}
-          data={[
-            "Girl",
-            "Boy",
-            "Princess",
-            "Prince",
-            "Witch",
-            "Cat",
-            "Dog",
-            "Animal",
-            "Pirate",
-          ]}
+          categories={caracters}
         />
       )}
 
