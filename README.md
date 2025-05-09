@@ -6,5 +6,5 @@ This is an app that I created for my kids. We are avid bedtime story readers, so
 
 ## Notes
 
-Right now it uses a fork of [`guntedex`](`https://github.com/garethbjohnson/gutendex`), which is a simple API that lets you query the open source library [`Project Gutenberg`](`https://www.gutenberg.org/`).
-In the future, I want to create a RESTApi with (`Calibre`)[`https://calibre-ebook.com/`], which is an open source ebook management application. I'd like to query the metadata of my own ebook library to feed this app.
+Right now it uses a fork of [guntedex](https://github.com/garethbjohnson/gutendex), which is a simple API that lets you query the open source library [Project Gutenberg](https://www.gutenberg.org/).
+In the future, I want to create a RESTApi with [Calibre](https://calibre-ebook.com/), which is an open source ebook management application. I'd like to query the metadata of my own ebook library to feed this app.
