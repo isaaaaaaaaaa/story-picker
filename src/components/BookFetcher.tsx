@@ -9,29 +9,18 @@ interface ApiItem {
   results: Array<Book>;
 }
 
-const BookFetcher = ({ selectedCaracter, onChangeBook }) => {
+const BookFetcher = ({
+  selectedCaracter,
+  onChangeBook,
+}: {
+  selectedCaracter: string;
+  onChangeBook: any;
+}) => {
   const [data, setData] = useState<ApiItem>();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  // const [selectedCaracter, setSelectedCaracter] = useState<string | null>(null);
-  // const [selectedBook, setSelectedBook] = useState<Book | null>(null);
 
-  let bookCoverUrl: string | undefined = "";
-  const [url, setUrl] = useState<string>(
-    `http://127.0.0.1:8000/books?languages=en&search=${selectedCaracter}`
-  );
-
-  const caracters: Array<string> = [
-    "Girl",
-    "Boy",
-    "Princess",
-    "Prince",
-    "Witch",
-    "Cat",
-    "Dog",
-    "Animal",
-    "Pirate",
-  ];
+  const url = `http://127.0.0.1:8000/books?languages=en&search=${selectedCaracter}`;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,18 +39,7 @@ const BookFetcher = ({ selectedCaracter, onChangeBook }) => {
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures this effect runs only once after the initial render
-
-  // function handleClick(caracter: string) {
-  //   fetchData(`${url}&search=${caracter}`);
-  //   setSelectedCaracter(caracter);
-  // }
-
-  // function handleBookClick(book: Book) {
-  //   setSelectedBook(book);
-  //   alert(Object.entries(book.formats).find((x) => x[0] === "image/jpeg")[1]);
-  // }
-
+  }, []);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -75,7 +53,7 @@ const BookFetcher = ({ selectedCaracter, onChangeBook }) => {
         {data?.results.map((item) => (
           <div
             className="cursor-pointer rounded-xl border-2 border-solid border-indigo-500 shadow-lg m-8"
-            key={item.id}
+            key={item.title}
             onClick={() => onChangeBook(item)}
           >
             <h4>{item.title}</h4>
@@ -84,16 +62,6 @@ const BookFetcher = ({ selectedCaracter, onChangeBook }) => {
       </div>
     </section>
   );
-
-  // if (selectedBook !== null) {
-  //   return (
-  //     <section>
-  //       <p>{bookCoverUrl}</p>
-  //       <img src={bookCoverUrl}></img>
-  //     </section>
-  //   );
-  // }
-  return <section></section>;
 };
 
 export default BookFetcher;
